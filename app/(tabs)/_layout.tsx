@@ -38,6 +38,12 @@ export default function TabLayout() {
           tabBarIcon: ({ color }) => <MaterialIcons name="question-mark" size={28} color={color} />,
         }}
       />
+      <Tabs.Screen
+        name="details/[id]"
+        options={{
+          href: null,
+        }}
+      />
     </Tabs>
   );
 }
