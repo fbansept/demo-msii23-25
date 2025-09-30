@@ -1,6 +1,7 @@
 import BasicView from "@/components/basic-view";
+import CustomButton from "@/components/custom-button";
 import { Item } from "@/models/Item";
-import { useLocalSearchParams } from "expo-router";
+import { router, useLocalSearchParams } from "expo-router";
 import { useEffect, useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
 
@@ -23,6 +24,10 @@ export default function DetailsScreen() {
         task ? (
             <BasicView title={task.title} >
                 <Text>{task.body}</Text>
+                <CustomButton
+                    onPress={() => router.push('/camera')}>
+                    Prendre une photo
+                </CustomButton>
             </BasicView>)
             : (<View style={styles.loader}>
                 <Text>Loading...</Text>
